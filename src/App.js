@@ -67,13 +67,11 @@ class App extends React.Component {
 		newFigureModal.show();
 		if (fromFigure) {
 			let figureIndex = this.state.storedFigures.findIndex(figure => figure.id === fromFigure);
-			console.log(figureIndex);
 			if (position === 'after') {
 				figureIndex = figureIndex + 1;
 			} else {
 				figureIndex = figureIndex;
 			}
-			console.log(figureIndex);
 			this.setState({
 				fromFigurePosition: figureIndex
 			});
