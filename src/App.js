@@ -1,8 +1,8 @@
 import React from 'react';
 import * as bootstrap from 'bootstrap';
-import square from './figurePicker-square.svg';
-import circle from './figurePicker-circle.svg';
-import triangle from './figurePicker-triangle.svg';
+import square from './images/figurePicker-square.svg';
+import circle from './images/figurePicker-circle.svg';
+import triangle from './images/figurePicker-triangle.svg';
 import './App.css';
 import { Modal } from './components/Modal';
 import { StoredFigure } from './components/StoredFigure';
