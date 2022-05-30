@@ -1,9 +1,11 @@
 import React from 'react';
 import * as bootstrap from 'bootstrap';
+import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import square from './images/figurePicker-square.svg';
 import circle from './images/figurePicker-circle.svg';
 import triangle from './images/figurePicker-triangle.svg';
-import './App.css';
 import { Modal } from './components/Modal';
 import { StoredFigure } from './components/StoredFigure';
 
@@ -25,7 +27,9 @@ function StoredFiguresList(props) {
 			<StoredFigure key={storedFigure.id} storedFigure={storedFigure} showModal={props.showModal} deleteFigure={props.deleteFigure} />
 		);
 		return (
-			<div className='selectedFigures d-flex overflow-scroll'>{storedFiguresList}</div>
+			<div className='selectedFigures d-flex overflow-scroll'>
+				{storedFiguresList}
+			</div>
 		);
 	} else {
 		return (
@@ -129,6 +133,9 @@ class App extends React.Component {
 							<h5 className='m-0'>Administrador de figuras</h5>
 						</div>
 						<div className='card-body'>
+							{
+								this.state.storedFigures.length > 0 && <p className='small text-muted'>Haz hover sobre alguna figura para añadir otras o eliminarla.</p>
+							}
 							<StoredFiguresList figures={this.state.storedFigures} showModal={this.showNewFigureModal} deleteFigure={this.deleteFigure} />
 						</div>
 					</div>
